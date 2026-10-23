@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+/backend/generated/
+.env
+.env.local
+.env.*.local
+!.env.example
+.pgdata/
+*.log
+.DS_Store
+tsconfig.tsbuildinfo
