@@ -15,7 +15,8 @@ const project = (n: number) => ({
 	projectName: `Project ${tag} ${n}`,
 	repoUrl: `https://github.com/${tag}/repo-${n}`,
 	liveLink: `https://${tag}-${n}.example.dev`,
-	description: `Integration test project number ${n}, long enough to pass validation.`,
+	description: `Integration test project number ${n}, 
+	long enough to pass validation.`,
 });
 
 const student = request.agent(app);
@@ -23,7 +24,11 @@ const mentor = request.agent(app);
 
 beforeAll(async () => {
 	await prisma.user.create({
-		data: { name: 'Test Mentor', email: mentorEmail, passwordHash: await bcrypt.hash(password, 4), role: 'MENTOR' },
+		data: { 
+			name: 'Test Mentor', 
+			email: mentorEmail, 
+			passwordHash: await bcrypt.hash(password, 4), 
+			role: 'MENTOR' },
 	});
 });
 
