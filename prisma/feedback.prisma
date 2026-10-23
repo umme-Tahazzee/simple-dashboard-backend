@@ -1,0 +1,10 @@
+model Feedback {
+  id           String   @id @default(cuid())
+  message      String
+  createdAt    DateTime @default(now())
+
+  submissionId String
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  mentorId     String
+  mentor       User       @relation(fields: [mentorId], references: [id])
+}

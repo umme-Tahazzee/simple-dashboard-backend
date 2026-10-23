@@ -1,0 +1,11 @@
+enum Role {
+  STUDENT
+  MENTOR
+  ADMIN
+}
+
+enum Status {
+  PENDING
+  APPROVED
+  REJECTED
+}

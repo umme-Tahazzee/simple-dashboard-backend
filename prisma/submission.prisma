@@ -1,0 +1,17 @@
+model Submission {
+  id          String     @id @default(cuid())
+  projectName String
+  repoUrl     String     @unique // normalized -> DB-level duplicate protection
+  liveLink    String
+  description String
+  status      Status     @default(PENDING)
+  createdAt   DateTime   @default(now())
+  reviewedAt  DateTime?
+
+  studentId String
+  student   User       @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  feedbacks Feedback[] // one Submission -> many Feedbacks
+
+  @@index([status, createdAt]) // speeds up the filtered, sorted dashboard query
+  @@index([studentId])
+}
