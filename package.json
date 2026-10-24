@@ -4,8 +4,9 @@
   "description": "Express + Prisma API for the project submission and review dashboard",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-      "build": "tsup",
+    "build": "tsup",
     "start": "node dist/server.js",
+    "vercel-build": "prisma generate && tsup",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -18,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/adapter-pg": "^7.10.1",
+    "@prisma/adapter-pg": "6.19.3",
     "@prisma/client": "^6.19.3",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
