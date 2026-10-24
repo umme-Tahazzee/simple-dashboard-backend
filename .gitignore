@@ -1,8 +1,5 @@
 node_modules/
-dist/
 .next/
-generated/
-/backend/generated/
 .env
 .env.local
 .env.*.local
