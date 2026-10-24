@@ -2,11 +2,12 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
-import config from './config';
+
 import { globalErrorHandler } from './app/middlewares/globalErrorHandler';
 import { AuthRoutes } from './app/modules/auth/auth.routes';
 import { SubmissionRoutes } from './app/modules/submission/submission.routes';
 import { prisma } from './lib/prisma';
+import config from './config/index.js';
 
 const app = express();
 
