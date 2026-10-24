@@ -4,7 +4,7 @@
   "description": "Express + Prisma API for the project submission and review dashboard",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate && tsup",
+      "build": "tsup",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
